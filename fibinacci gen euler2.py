@@ -1,15 +1,13 @@
 # fibonacci generator
 
 
-x = 0
-y = 1
+prev = 0 # More meaningful identifiers
+curr = 1
 answer = 0
-while x < 4000000:
-    z = x
-    x = x + y
-    y = z
-    if x % 2 == 0:
-        answer = answer + x
+while prev < 4 * 1000 * 1000: # 4000000 can be difficult to read
+    temp = prev
+    prev += curr # Means add curr to prev
+    curr = temp
+    if prev % 2 == 0:
+        answer += prev
 print(answer)
-    
-    
